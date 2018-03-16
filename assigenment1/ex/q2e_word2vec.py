@@ -13,9 +13,7 @@ def normalizeRows(x):
     Implement a function that normalizes each row of a matrix to have
     unit length.
     """
-
-    ### YOUR CODE HERE
-    ### END YOUR CODE
+    x = x / np.expand_dims(np.linalg.norm(x , axis=1),axis=1) #deviding each row by its norm makes each row a unit vector
 
     return x
 
@@ -56,9 +54,36 @@ def softmaxCostAndGradient(predicted, target, outputVectors, dataset):
     assignment!
     """
 
-    ### YOUR CODE HERE
-    raise NotImplementedError
-    ### END YOUR CODE
+    W = outputVectors.shape[0] #extructing dictionary size as W
+
+    #creating one-hot vector y
+    y = np.zeros([W,1])
+    y[target] = 1
+
+    #turn predicted to column vector - if not already
+    if predicted.shape[0] != 1 :
+        predicted = np.transpose(np.expand_dims(predicted,axis=1))
+
+    #calc inner product for predicted with all vectors of outputVectors
+    inner_prod = np.matmul(predicted,np.transpose(outputVectors)) # dim [1 X W]
+
+    #calc softmax for each word in the dictionary
+    s = softmax(inner_prod)
+
+    #caculating the cost
+    cost = - np.log(s[target]) # y is a one-hot vector , hence the only element that is not zeroed is y[target]
+
+    #calculating gradPred according to our calculations at 2a
+    gradPred = - np.transpose(outputVectors[target,:]) + np.sum((np.exp(inner_prod) * outputVectors),axis=0) / (np.sum(np.exp(inner_prod)))
+
+    # calculating grad according to our calculations at 2b
+    #grad =
+
+
+
+
+
+
 
     return cost, gradPred, grad
 
