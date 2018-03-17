@@ -36,8 +36,11 @@ def gradcheck_naive(f, x):
         # before calling f(x) each time. This will make it possible
         # to test cost functions with built in randomness later.
 
-        fx_plus_h, grad_plus_h = f(x[ix] + h)
-        fx_minus_h, grad_minus_h = f(x[ix] - h)
+        h_vec = np.zeros(x.shape)
+        h_vec[ix] = h
+
+        fx_plus_h, grad_plus_h = f(x + h_vec)
+        fx_minus_h, grad_minus_h = f(x - h_vec)
 
         numgrad = (fx_plus_h - fx_minus_h) / (2*h)
 

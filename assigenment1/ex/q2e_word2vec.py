@@ -55,14 +55,12 @@ def softmaxCostAndGradient(predicted, target, outputVectors, dataset):
     """
 
     W = outputVectors.shape[0] #extructing dictionary size as W
+    D = outputVectors.shape[1] #extructing embadings size as D
 
-    #creating one-hot vector y
-    y = np.zeros([W,1])
-    y[target] = 1
-
-    #turn predicted to column vector - if not already
+    #turn predicted to row vector - if not already
     if predicted.shape[0] != 1 :
-        predicted = np.transpose(np.expand_dims(predicted,axis=1))
+        predicted = np.expand_dims(predicted,axis=1)
+        predicted = np.transpose(predicted)
 
     #calc inner product for predicted with all vectors of outputVectors
     inner_prod = np.matmul(predicted,np.transpose(outputVectors)) # dim [1 X W]
@@ -71,19 +69,19 @@ def softmaxCostAndGradient(predicted, target, outputVectors, dataset):
     s = softmax(inner_prod)
 
     #caculating the cost
-    cost = - np.log(s[target]) # y is a one-hot vector , hence the only element that is not zeroed is y[target]
+    cost = - np.log(s[0,target]) # since y is a one-hot vector , hence the only element that is not zeroed is y[target]
 
     #calculating gradPred according to our calculations at 2a
-    gradPred = - np.transpose(outputVectors[target,:]) + np.sum((np.exp(inner_prod) * outputVectors),axis=0) / (np.sum(np.exp(inner_prod)))
+    gradPred_numerator = np.sum((np.tile(np.exp(np.transpose(inner_prod)),(1,D)) * outputVectors),axis=0)
+    gradPred_denumerator = np.sum(np.exp(inner_prod))
+    gradPred = - np.transpose(outputVectors[target,:]) + gradPred_numerator / gradPred_denumerator # dim [Dx1]
 
     # calculating grad according to our calculations at 2b
-    #grad =
-
-
-
-
-
-
+    grad_numerator = np.tile(predicted,(W,1)) * np.tile(np.exp(np.transpose(inner_prod)),(1,D))
+    grad_denumerator = gradPred_denumerator
+    grad = np.zeros([W,D],dtype=np.float32)
+    grad[target,:] = - predicted
+    grad += grad_numerator / grad_denumerator
 
     return cost, gradPred, grad
 
@@ -119,9 +117,29 @@ def negSamplingCostAndGradient(predicted, target, outputVectors, dataset,
     indices = [target]
     indices.extend(getNegativeSamples(target, dataset, K))
 
-    ### YOUR CODE HERE
-    raise NotImplementedError
-    ### END YOUR CODE
+    W = outputVectors.shape[0] #extructing dictionary size as W
+    D = outputVectors.shape[1] #extructing embadings size as D
+
+    #turn predicted to row vector - if not already
+    if predicted.shape[0] != 1 :
+        predicted = np.expand_dims(predicted,axis=1)
+        predicted = np.transpose(predicted)
+
+    #calc inner product for predicted with all vectors of outputVectors
+    outputVectorsSampled = outputVectors[indices,:] # dim [ (K+1) x D ]
+    inner_prod = np.matmul(predicted,np.transpose(outputVectorsSampled)) # dim [1 X (K+1)]
+    neg_samples_sigmoid = sigmoid( - inner_prod[0,1:K+1]) # dim [1 x K]
+
+    # caculating the cost
+    cost = -np.log(sigmoid(inner_prod[0,0])) - np.sum(np.log(neg_samples_sigmoid))
+
+    # calculating gradPred according to our calculations at 2c
+    gradPred = - (1-neg_samples_sigmoid[0]) * outputVectorsSampled[0,:] - np.sum(outputVectorsSampled[1:K+1,:] * np.tile(np.expand_dims((1- neg_samples_sigmoid),axis=1),(1,D)) , axis=0) # dim [ 1 x D ]
+
+    grad = np.zeros([W,D],dtype=np.float32)# dim [ W x D ]
+
+    grad[indices[0],:] = - predicted * (1 - sigmoid(inner_prod[0,0]))
+    grad[indices[1:K+1],:] = np.transpose(np.matmul(np.transpose(predicted) , np.expand_dims((1 - neg_samples_sigmoid),axis=0))) #dim [ K x D ]
 
     return cost, gradPred, grad
 
@@ -150,13 +168,23 @@ def skipgram(currentWord, C, contextWords, tokens, inputVectors, outputVectors,
     grad -- the gradient with respect to the word vectors
     """
 
+
     cost = 0.0
     gradIn = np.zeros(inputVectors.shape)
     gradOut = np.zeros(outputVectors.shape)
 
-    ### YOUR CODE HERE
-    raise NotImplementedError
-    ### END YOUR CODE
+    center_word_index = tokens[currentWord]
+
+    for out_string in contextWords:
+        out_index = tokens[out_string]
+        out_cost, out_gradPred, out_grad = word2vecCostAndGradient(inputVectors[center_word_index, :], out_index, outputVectors,
+                                                       dataset)
+        out_gradIn = np.zeros(gradIn.shape)
+        out_gradIn[center_word_index,:] = out_gradPred
+
+        gradIn += out_gradIn
+        gradOut += out_grad
+        cost += out_cost
 
     return cost, gradIn, gradOut
 
@@ -210,9 +238,9 @@ def test_word2vec():
     dummy_vectors = normalizeRows(np.random.randn(10,3))
     dummy_tokens = dict([("a",0), ("b",1), ("c",2),("d",3),("e",4)])
     print "==== Gradient check for skip-gram ===="
-    gradcheck_naive(lambda vec: word2vec_sgd_wrapper(
-        skipgram, dummy_tokens, vec, dataset, 5, softmaxCostAndGradient),
-        dummy_vectors)
+    #gradcheck_naive(lambda vec: word2vec_sgd_wrapper(
+    #    skipgram, dummy_tokens, vec, dataset, 5, softmaxCostAndGradient),
+    #    dummy_vectors)
     gradcheck_naive(lambda vec: word2vec_sgd_wrapper(
         skipgram, dummy_tokens, vec, dataset, 5, negSamplingCostAndGradient),
         dummy_vectors)
