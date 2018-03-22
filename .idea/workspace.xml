@@ -15,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="q2e_word2vec.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="q2e_word2vec.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assigenment1/ex/q2e_word2vec.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="136" column="30" lean-forward="false" selection-start-line="136" selection-start-column="30" selection-end-line="136" selection-end-column="30" />
+            <state relative-caret-position="269">
+              <caret line="158" column="30" lean-forward="true" selection-start-line="158" selection-start-column="30" selection-end-line="158" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -35,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="q1e_gradcheck.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="q1e_gradcheck.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assigenment1/ex/q1e_gradcheck.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="-52">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -55,6 +55,8 @@
       <find>gradient check fa</find>
       <find>Gradient check passed</find>
       <find>word2vec_sgd_wrapper</find>
+      <find>negSamplingCostAndGradient</find>
+      <find>neg_samples_sigmoid</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -71,9 +73,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="655" />
     <option name="y" value="23" />
-    <option name="width" value="1680" />
+    <option name="width" value="840" />
     <option name="height" value="950" />
   </component>
   <component name="ProjectView">
@@ -250,53 +251,61 @@
       <option name="project" value="LOCAL" />
       <updated>1521210046960</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="q2 commit">
+      <created>1521312961692</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1521312961692</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.17 at 20h 42m 20s.xml">
+    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.19 at 22h 08m 46s.xml">
       <configuration name="py.test in q2e_word2vec.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.17 at 20h 43m 15s.xml">
+    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.19 at 22h 13m 25s.xml">
       <configuration name="py.test in q2e_word2vec.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.17 at 20h 43m 36s.xml">
+    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.19 at 22h 15m 07s.xml">
       <configuration name="py.test in q2e_word2vec.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.17 at 20h 46m 26s.xml">
+    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.22 at 08h 52m 09s.xml">
       <configuration name="py.test in q2e_word2vec.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.17 at 20h 46m 52s.xml">
+    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.22 at 08h 53m 52s.xml">
       <configuration name="py.test in q2e_word2vec.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.17 at 20h 46m 59s.xml">
+    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.22 at 08h 53m 59s.xml">
       <configuration name="py.test in q2e_word2vec.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.17 at 20h 54m 20s.xml">
+    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.22 at 08h 55m 43s.xml">
       <configuration name="py.test in q2e_word2vec.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.17 at 20h 54m 24s.xml">
+    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.22 at 08h 57m 25s.xml">
       <configuration name="py.test in q2e_word2vec.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.17 at 20h 55m 21s.xml">
+    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.22 at 09h 01m 12s.xml">
       <configuration name="py.test in q2e_word2vec.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.17 at 20h 55m 54s.xml">
+    <history-entry file="py_test_in_q2e_word2vec_py - 2018.03.22 at 09h 01m 28s.xml">
       <configuration name="py.test in q2e_word2vec.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="950" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14761905" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18630952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3473804" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3120729" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38724375" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40432802" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -319,12 +328,12 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/assigenment1/ex/q1e_gradcheck.py</url>
-          <line>47</line>
-          <option name="timeStamp" value="34" />
+          <url>file://$PROJECT_DIR$/assigenment1/ex/q2e_word2vec.py</url>
+          <line>134</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="38" />
+      <option name="time" value="53" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -369,18 +378,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assigenment1/ex/q2e_word2vec.py">
+    <entry file="file://$PROJECT_DIR$/assigenment1/ex/q1e_gradcheck.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="136" column="30" lean-forward="false" selection-start-line="136" selection-start-column="30" selection-end-line="136" selection-end-column="30" />
+        <state relative-caret-position="-52">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assigenment1/ex/q1e_gradcheck.py">
+    <entry file="file://$PROJECT_DIR$/assigenment1/ex/q2e_word2vec.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="269">
+          <caret line="158" column="30" lean-forward="true" selection-start-line="158" selection-start-column="30" selection-end-line="158" selection-end-column="30" />
           <folding />
         </state>
       </provider>

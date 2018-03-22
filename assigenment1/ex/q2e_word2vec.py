@@ -114,6 +114,7 @@ def negSamplingCostAndGradient(predicted, target, outputVectors, dataset,
 
     # Sampling of indices is done for you. Do not modify this if you
     # wish to match the autograder and receive points!
+
     indices = [target]
     indices.extend(getNegativeSamples(target, dataset, K))
 
@@ -128,18 +129,21 @@ def negSamplingCostAndGradient(predicted, target, outputVectors, dataset,
     #calc inner product for predicted with all vectors of outputVectors
     outputVectorsSampled = outputVectors[indices,:] # dim [ (K+1) x D ]
     inner_prod = np.matmul(predicted,np.transpose(outputVectorsSampled)) # dim [1 X (K+1)]
-    neg_samples_sigmoid = sigmoid( - inner_prod[0,1:K+1]) # dim [1 x K]
+    samples_sigmoid = sigmoid(inner_prod[0,:]) # dim [K+1]
 
     # caculating the cost
-    cost = -np.log(sigmoid(inner_prod[0,0])) - np.sum(np.log(neg_samples_sigmoid))
+    cost = -np.log(samples_sigmoid[0]) - np.sum(np.log(1 - samples_sigmoid[1:K+1]))
 
     # calculating gradPred according to our calculations at 2c
-    gradPred = - (1-neg_samples_sigmoid[0]) * outputVectorsSampled[0,:] - np.sum(outputVectorsSampled[1:K+1,:] * np.tile(np.expand_dims((1- neg_samples_sigmoid),axis=1),(1,D)) , axis=0) # dim [ 1 x D ]
+    gradPred = - (1 - samples_sigmoid[0]) * outputVectorsSampled[0,:] \
+               + np.sum(outputVectorsSampled[1:K+1,:] * np.tile(np.expand_dims((samples_sigmoid[1:K+1]),axis=1),(1,D)) , axis=0) # dim [ 1 x D ]
 
     grad = np.zeros([W,D],dtype=np.float32)# dim [ W x D ]
 
-    grad[indices[0],:] = - predicted * (1 - sigmoid(inner_prod[0,0]))
-    grad[indices[1:K+1],:] = np.transpose(np.matmul(np.transpose(predicted) , np.expand_dims((1 - neg_samples_sigmoid),axis=0))) #dim [ K x D ]
+    grad[indices[0],:] = - predicted * (1 - samples_sigmoid[0])
+    for idx in range(1,K+1):#indices[1:K+1]:
+        grad[indices[idx]:indices[idx]+1,:] += predicted * (samples_sigmoid[idx])
+        #np.transpose(np.matmul(np.transpose(predicted) , np.expand_dims((1 - neg_samples_sigmoid),axis=0)))[idx,:]
 
     return cost, gradPred, grad
 
@@ -238,9 +242,9 @@ def test_word2vec():
     dummy_vectors = normalizeRows(np.random.randn(10,3))
     dummy_tokens = dict([("a",0), ("b",1), ("c",2),("d",3),("e",4)])
     print "==== Gradient check for skip-gram ===="
-    #gradcheck_naive(lambda vec: word2vec_sgd_wrapper(
-    #    skipgram, dummy_tokens, vec, dataset, 5, softmaxCostAndGradient),
-    #    dummy_vectors)
+    gradcheck_naive(lambda vec: word2vec_sgd_wrapper(
+        skipgram, dummy_tokens, vec, dataset, 5, softmaxCostAndGradient),
+        dummy_vectors)
     gradcheck_naive(lambda vec: word2vec_sgd_wrapper(
         skipgram, dummy_tokens, vec, dataset, 5, negSamplingCostAndGradient),
         dummy_vectors)

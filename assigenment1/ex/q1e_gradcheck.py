@@ -38,8 +38,9 @@ def gradcheck_naive(f, x):
 
         h_vec = np.zeros(x.shape)
         h_vec[ix] = h
-
+        random.setstate(rndstate)
         fx_plus_h, grad_plus_h = f(x + h_vec)
+        random.setstate(rndstate)
         fx_minus_h, grad_minus_h = f(x - h_vec)
 
         numgrad = (fx_plus_h - fx_minus_h) / (2*h)
