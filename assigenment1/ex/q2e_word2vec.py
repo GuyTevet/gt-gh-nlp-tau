@@ -143,7 +143,6 @@ def negSamplingCostAndGradient(predicted, target, outputVectors, dataset,
     grad[indices[0],:] = - predicted * (1 - samples_sigmoid[0])
     for idx in range(1,K+1):#indices[1:K+1]:
         grad[indices[idx]:indices[idx]+1,:] += predicted * (samples_sigmoid[idx])
-        #np.transpose(np.matmul(np.transpose(predicted) , np.expand_dims((1 - neg_samples_sigmoid),axis=0)))[idx,:]
 
     return cost, gradPred, grad
 

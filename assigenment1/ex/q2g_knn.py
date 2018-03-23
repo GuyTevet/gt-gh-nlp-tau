@@ -15,10 +15,27 @@ def knn(vector, matrix, k=10):
     nearest_idx -- A numpy vector consists of the rows indices of the k-nearest neighbors in the matrix
     """
 
+    norm_vector = np.zeros([matrix.shape[0]])
     nearest_idx = []
 
     ### YOUR CODE
+
+    for idx in range(matrix.shape[0]):
+        #calc cosine distance
+        dot_prod = np.dot(vector,matrix[idx,:])
+        vec_norm = np.linalg.norm(vector)
+        mat_norm = np.linalg.norm(matrix[idx,:])
+
+        if dot_prod != 0 :
+            norm_vector[idx] = dot_prod/vec_norm/mat_norm
+        else:
+            norm_vector[idx] = 0
+
+    #find K-nn
+    nearest_idx = np.ndarray.tolist(np.argsort(1-norm_vector)[:k]) # find the k indexes that are closest to 1
+
     ### END YOUR CODE
+
     return nearest_idx
 
 def test_knn():
