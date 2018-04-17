@@ -28,8 +28,11 @@ def forward(data, label, params, dimensions):
 
     # Compute the probability
     ### YOUR CODE HERE: forward propagation
-    raise NotImplementedError
+    x = data
+    h = sigmoid(np.matmul(x,W1) + b1)
+    y_hat = softmax(np.matmul(h,W2)+b2)
     ### END YOUR CODE
+    return y_hat[0,label]
 
 def forward_backward_prop(data, labels, params, dimensions):
     """
@@ -59,11 +62,24 @@ def forward_backward_prop(data, labels, params, dimensions):
     b2 = np.reshape(params[ofs:ofs + Dy], (1, Dy))
 
     ### YOUR CODE HERE: forward propagation
-    raise NotImplementedError
+    x = data
+    y = labels
+    h = sigmoid(np.matmul(x,W1) + b1)
+    y_hat = softmax(np.matmul(h,W2)+b2)
+    cost = - np.sum(y * np.log2(y_hat))
     ### END YOUR CODE
 
     ### YOUR CODE HERE: backward propagation
-    raise NotImplementedError
+
+    #calc grads
+    y_diff = y_hat - y
+
+    gradW2 = np.transpose(np.matmul(np.transpose(y_diff), h))
+    gradb2 = np.expand_dims(np.sum((y_diff),axis=0),axis=0)
+
+    gradW1 = np.matmul(np.transpose(x) , np.matmul((y_diff),np.transpose(W2)) * sigmoid_grad(h))
+    gradb1 = np.expand_dims(np.sum(np.matmul((y_diff),np.transpose(W2)) * sigmoid_grad(h),axis=0),axis=0)
+
     ### END YOUR CODE
 
     ### Stack gradients (do not modify)
@@ -103,7 +119,24 @@ def your_sanity_checks():
     """
     print "Running your sanity checks..."
     ### YOUR CODE HERE
-    raise NotImplementedError
+    N = 20
+    dimensions = [10, 5, 10]
+    data = np.random.randn(N, dimensions[0])  # each row will be a datum
+    labels = np.zeros((N, dimensions[2]))
+    for i in xrange(N):
+        labels[i, random.randint(0, dimensions[2] - 1)] = 1
+
+    params = np.random.randn((dimensions[0] + 1) * dimensions[1] + (
+        dimensions[1] + 1) * dimensions[2], )
+
+    forward_cost = 0
+    for in_word, out_word in zip(data,labels):
+        label = list(out_word).index(1)
+        forward_cost -= np.log2(forward(in_word, label, params, dimensions))
+
+    for_back_cost, _ = forward_backward_prop(data, labels, params, dimensions)
+    assert abs(forward_cost - for_back_cost) < 0.00001
+    print ('our sanity check pass')
     ### END YOUR CODE
 
 
