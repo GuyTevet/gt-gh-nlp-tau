@@ -65,25 +65,6 @@ def train_ngrams(dataset):
     trigram_counts[(-1, -1,-1)] = sentence_starts
     ### END YOUR CODE
 
-    # ### YOUR CODE HERE
-    # start_word = dataset[0][0]
-    # for sentence in dataset:
-    #     older = last = None
-    #
-    #     for current in sentence:
-    #         unigram_counts[current] = unigram_counts.get(current, 0) + 1
-    #         if last is not None:
-    #             bigram_counts[(last, current)] = bigram_counts.get((last, current), 0) + 1
-    #         if older is not None:
-    #             trigram_counts[(older, last, current)] = trigram_counts.get((older, last, current), 0) + 1
-    #
-    #         older = last
-    #         last = current
-    #
-    # unigram_counts[start_word] /= 2 # we only use it for the bigram probability
-    # token_count = sum(unigram_counts.values()) - unigram_counts[start_word]
-    # ### END YOUR CODE
-
     return trigram_counts, bigram_counts, unigram_counts, token_count
 
 def evaluate_ngrams(eval_dataset, trigram_counts, bigram_counts, unigram_counts, train_token_count, lambda1, lambda2):
@@ -139,46 +120,14 @@ def evaluate_ngrams(eval_dataset, trigram_counts, bigram_counts, unigram_counts,
 
             prob = (lambda1 * trigram_prob) + (lambda2 * bigram_prob) + (lambda3 * unigram_prob)
 
-            # if prob <= 1. / train_token_count :
-            #     prob = 0
+            if prob <= 1. / train_token_count :
+                prob = 0
 
             prob_log_sum -= np.log2(prob)
             token_num += 1
 
     perplexity = 2 ** (prob_log_sum / token_num)
     ### END YOUR CODE
-
-
-
-    # ### YOUR CODE HERE
-    # sum_of_probs = 0
-    # test_token_count = 0
-    # for sentence in eval_dataset:
-    #     older = sentence[0]
-    #     last = sentence[1]
-    #
-    #     for current in sentence[2:]:
-    #         # calculating the probability
-    #         unigram_prob = float(unigram_counts.get(current, 0)) / train_token_count
-    #         if last in unigram_counts:
-    #             bigram_prob = float(bigram_counts.get((last, current), 0)) / unigram_counts[last]
-    #         else:
-    #             bigram_prob = 0
-    #         if (older, last) in bigram_counts:
-    #             trigram_prob = float(trigram_counts.get((older, last, current), 0)) / bigram_counts[(older, last)]
-    #         else:
-    #             trigram_prob = 0
-    #
-    #         # calculating the linear interpolation
-    #         prob = lambda1 * trigram_prob + lambda2 * bigram_prob + (1 - lambda1 - lambda2) * unigram_prob
-    #         sum_of_probs -= np.log2(prob)
-    #
-    #         test_token_count += 1
-    #         older = last
-    #         last = current
-    #
-    # perplexity = 2 ** (sum_of_probs / test_token_count)
-    # ### END YOUR CODE
 
     return perplexity
 

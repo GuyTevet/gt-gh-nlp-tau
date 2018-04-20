@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b495623-7843-410a-a522-d226c6b7dc74" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/assigenment2/saved_params_10000.npy" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assigenment2/saved_params_15000.npy" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assigenment2/saved_params_20000.npy" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assigenment2/saved_params_25000.npy" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assigenment2/saved_params_30000.npy" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assigenment2/saved_params_35000.npy" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assigenment2/saved_params_40000.npy" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assigenment2/saved_params_5000.npy" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/assigenment2/gradcheck.py" afterPath="$PROJECT_DIR$/assigenment2/gradcheck.py" />
-      <change beforePath="$PROJECT_DIR$/assigenment2/neural.py" afterPath="$PROJECT_DIR$/assigenment2/neural.py" />
       <change beforePath="$PROJECT_DIR$/assigenment2/neural_lm.py" afterPath="$PROJECT_DIR$/assigenment2/neural_lm.py" />
       <change beforePath="$PROJECT_DIR$/assigenment2/ngram_model.py" afterPath="$PROJECT_DIR$/assigenment2/ngram_model.py" />
-      <change beforePath="$PROJECT_DIR$/assigenment2/sgd.py" afterPath="$PROJECT_DIR$/assigenment2/sgd.py" />
-      <change beforePath="$PROJECT_DIR$/assigenment2/sigmoid.py" afterPath="$PROJECT_DIR$/assigenment2/sigmoid.py" />
-      <change beforePath="$PROJECT_DIR$/assigenment2/softmax.py" afterPath="$PROJECT_DIR$/assigenment2/softmax.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,8 +26,8 @@
       <file leaf-file-name="neural.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assigenment2/neural.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            <state relative-caret-position="76">
+              <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -33,8 +36,8 @@
       <file leaf-file-name="neural_lm.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assigenment2/neural_lm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="105" column="5" lean-forward="false" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
+            <state relative-caret-position="323">
+              <caret line="170" column="40" lean-forward="true" selection-start-line="170" selection-start-column="40" selection-end-line="170" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -43,9 +46,11 @@
       <file leaf-file-name="ngram_model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assigenment2/ngram_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="34" column="40" lean-forward="true" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
-              <folding />
+            <state relative-caret-position="1049">
+              <caret line="131" column="21" lean-forward="false" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
+              <folding>
+                <marker date="1524053132343" expanded="true" signature="4478:4550" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,8 +58,8 @@
       <file leaf-file-name="sgd.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assigenment2/sgd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="38" column="18" lean-forward="true" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+            <state relative-caret-position="257">
+              <caret line="81" column="9" lean-forward="false" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -64,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/../nlp-tau-avi/hw2/neural.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="124" column="10" lean-forward="true" selection-start-line="124" selection-start-column="10" selection-end-line="124" selection-end-column="10" />
+              <caret line="124" column="10" lean-forward="false" selection-start-line="124" selection-start-column="10" selection-end-line="124" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -173,7 +178,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.py.test in ngram_model.py">
+  <component name="RunManager" selected="Python.neural_lm">
     <configuration name="gradcheck" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -270,9 +275,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.py.test in ngram_model.py" />
-        <item index="1" class="java.lang.String" itemvalue="Python.neural_lm" />
-        <item index="2" class="java.lang.String" itemvalue="Python.neural" />
+        <item index="0" class="java.lang.String" itemvalue="Python.neural_lm" />
+        <item index="1" class="java.lang.String" itemvalue="Python.neural" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.py.test in ngram_model.py" />
         <item index="3" class="java.lang.String" itemvalue="Python.neural (1)" />
         <item index="4" class="java.lang.String" itemvalue="Python.gradcheck" />
       </list>
@@ -348,16 +353,17 @@
       <option name="project" value="LOCAL" />
       <updated>1523512534392</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="assignment2 - snapshot">
+      <created>1523981807862</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1523981807862</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="py_test_in_ngram_model_py - 2018.04.17 at 11h 03m 52s.xml">
-      <configuration name="py.test in ngram_model.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="py_test_in_ngram_model_py - 2018.04.17 at 11h 21m 25s.xml">
-      <configuration name="py.test in ngram_model.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="py_test_in_ngram_model_py - 2018.04.17 at 11h 28m 22s.xml">
       <configuration name="py.test in ngram_model.py" configurationId="tests" />
     </history-entry>
@@ -382,12 +388,17 @@
     <history-entry file="py_test_in_ngram_model_py - 2018.04.17 at 11h 56m 29s.xml">
       <configuration name="py.test in ngram_model.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="py_test_in_ngram_model_py - 2018.04.18 at 15h 06m 50s.xml">
+      <configuration name="py.test in ngram_model.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_ngram_model_py - 2018.04.18 at 15h 15m 20s.xml">
+      <configuration name="py.test in ngram_model.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="950" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18630952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18630952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39066058" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -413,7 +424,8 @@
     <MESSAGE value="q1 commit" />
     <MESSAGE value="q2 commit" />
     <MESSAGE value="assignment1 done" />
-    <option name="LAST_COMMIT_MESSAGE" value="assignment1 done" />
+    <MESSAGE value="assignment2 - snapshot" />
+    <option name="LAST_COMMIT_MESSAGE" value="assignment2 - snapshot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -444,22 +456,17 @@
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/assigenment2/neural_lm.py</url>
-          <line>144</line>
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/assigenment2/ngram_model.py</url>
-          <line>86</line>
+          <line>67</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/assigenment2/ngram_model.py</url>
-          <line>141</line>
+          <line>122</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="77" />
+      <option name="time" value="78" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -651,7 +658,7 @@
         <state relative-caret-position="510">
           <caret line="34" column="23" lean-forward="false" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="23" />
           <folding>
-            <element signature="e#23#41#0" expanded="true" />
+            <element signature="e#23#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -667,39 +674,41 @@
     <entry file="file://$PROJECT_DIR$/../nlp-tau-avi/hw2/neural.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="124" column="10" lean-forward="true" selection-start-line="124" selection-start-column="10" selection-end-line="124" selection-end-column="10" />
+          <caret line="124" column="10" lean-forward="false" selection-start-line="124" selection-start-column="10" selection-end-line="124" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assigenment2/neural.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state relative-caret-position="76">
+          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assigenment2/sgd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="38" column="18" lean-forward="true" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+        <state relative-caret-position="257">
+          <caret line="81" column="9" lean-forward="false" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assigenment2/ngram_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="34" column="40" lean-forward="true" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
-          <folding />
+        <state relative-caret-position="1049">
+          <caret line="131" column="21" lean-forward="false" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
+          <folding>
+            <marker date="1524053132343" expanded="true" signature="4478:4550" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assigenment2/neural_lm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="105" column="5" lean-forward="false" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
+        <state relative-caret-position="323">
+          <caret line="170" column="40" lean-forward="true" selection-start-line="170" selection-start-column="40" selection-end-line="170" selection-end-column="40" />
           <folding />
         </state>
       </provider>
