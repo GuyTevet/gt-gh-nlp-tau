@@ -1,0 +1,89 @@
+real_tags:
+real_tags:
+['JJ', 'NN']
+predicted_tags:
+['NNP', 'NNP']
+sentence_words:
+['initCap', 'initCap']
+
+
+real_tags:
+['VBD']
+predicted_tags:
+['*']
+sentence_words:
+['initCap']
+
+
+real_tags:
+['JJ', 'NNS', 'VBP', 'JJ', 'NNS']
+predicted_tags:
+['NNP', 'NNPS', 'VBP', 'JJ', 'NNP']
+sentence_words:
+['initCap', 'Advertisers', 'Try', 'UNK', 'initCap']
+
+
+real_tags:
+['NN', 'VBZ', 'NNS', 'IN', 'JJ', 'NN']
+predicted_tags:
+['NNP', 'NNP', 'NNP', 'IN', 'NNP', 'NNP']
+sentence_words:
+['initCap', 'initCap', 'initCap', 'In', 'Environmental', 'initCap']
+
+
+real_tags:
+['NNS', 'CC', 'NNS']
+predicted_tags:
+['NNPS', 'CC', 'NNPS']
+sentence_words:
+['Odds', 'and', 'Ends']
+
+
+real_tags:
+['NNP', 'NNP']
+predicted_tags:
+['NNP', 'NNPS']
+sentence_words:
+['Treasury', 'Securities']
+
+
+real_tags:
+['JJ', 'NNS']
+predicted_tags:
+['NNP', 'NNPS']
+sentence_words:
+['Foreign', 'Bonds']
+
+
+real_tags:
+['JJ', 'NNS']
+predicted_tags:
+['NNP', 'NNPS']
+sentence_words:
+['Mortgage-Backed', 'Securities']
+
+
+real_tags:
+['NNS']
+predicted_tags:
+['*']
+sentence_words:
+['Municipals']
+
+
+real_tags:
+['NNS', ':', 'NNP', 'NNP', 'NNP', 'NNP', 'NN', 'CD', ',', 'JJ']
+predicted_tags:
+['NNS', ':', 'NNP', 'NNP', 'NNP', 'NNP', 'NN', 'CD', ',', 'RB']
+sentence_words:
+['Bonds', ':', 'Shearson', 'Lehman', 'Hutton', 'Treasury', 'index', 'containsDigitAndPeriod', ',', 'off']
+
+
+real_tags:
+['NNP', 'NNP', 'NNP', 'NNP', 'NNP', '.', '-LRB-', 'NNP', 'NNP', '-RRB-', ':', 'VBN', 'NNS', 'IN', 'CD', 'NN', 'NNS', 'IN', 'NN', 'IN', 'CD', 'NNS']
+predicted_tags:
+['NNP', 'NNP', 'NNP', 'NNP', 'NNP', '.', '-LRB-', 'NNP', 'NNP', '-RRB-', ':', 'VBN', 'NNS', 'IN', 'JJ', 'NN', 'NNS', 'IN', 'NN', 'IN', 'CD', 'JJ']
+sentence_words:
+['FEDERAL', 'HOME', 'LOAN', 'MORTGAGE', 'CORP', '.', '-LRB-', 'Freddie', 'Mac', '-RRB-', ':', 'Posted', 'yields', 'on', '30-year', 'mortgage', 'commitments', 'for', 'delivery', 'within', '30', 'UNK']
+
+

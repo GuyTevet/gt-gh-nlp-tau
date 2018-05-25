@@ -50,7 +50,36 @@ def replace_word(word):
         Replaces rare words with categories (numbers, dates, etc...)
     """
     ### YOUR CODE HERE
-    raise NotImplementedError
+
+    #based on Bikel, Daniel M., Richard Schwartz, and Ralph M. Weischedel. "An algorithm that learns what's in a name." Machine learning 34.1-3 (1999): 211-231.
+
+    if word.isdigit():
+        if len(word) ==2:
+            return 'twoDigitNum'
+        elif len(word) ==4:
+            return 'fourDigitNum'
+        else:
+            return 'otherNum'
+    elif any(char.isdigit() for char in word):
+        if any(char.isalpha() for char in word):
+            return 'containsDigitAndAlpha'
+        elif any(char == '-' for char in word):
+            return 'containsDigitAndDash'
+        elif any(char == '/' for char in word):
+            return 'containsDigitAndSlash'
+        elif any(char == ',' for char in word):
+            return 'containsDigitAndComma'
+        elif any(char == '.' for char in word):
+            return 'containsDigitAndPeriod'
+    elif all(char.isupper() for char in word):
+        return 'allCaps'
+    elif any(char.isupper() for char in word) and any(char == '.' for char in word):
+        return 'capPeriod'
+    elif all(char.isalpha() for char in word) and word[0].isupper():
+        return 'initCap'
+    elif all(char.islower() for char in word):
+        return 'lowerCase'
+
     ### END YOUR CODE
     return "UNK"
 
