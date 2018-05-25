@@ -1,0 +1,156 @@
+# Symbols in the grammar are case-sensitive.
+# 
+# This grammar uses a convention that
+#    - terminals are lowercase          (president)
+#    - preterminals are capitalized     (Noun)
+#    - other nonterminals are all-caps  (NP)
+# 
+# This convention just makes grammars more readable to humans.  Thus:
+#
+#    - When *you* are writing grammars, you should 
+#      follow this convention unless you have a good reason not to.  
+#
+#    - But the  *program* should still work with grammars that don't
+#      follow this convention.  So how can the program reliably tell
+#      the difference between terminal and nonterminal symbols?  If
+#      there is at least one rule for rewriting a symbol, then that
+#      symbol is a nonterminal and should be rewritten.
+#######################
+
+# Rules for creating full sentences.
+
+1	ROOT	S Mark
+#1	ROOT	is it true that S ?     # mixing terminals and nonterminals is ok.
+
+# The basic grammar rules.  Here's what the abbreviations stand for:
+#    S  = sentence
+#    NP = noun phrase
+#    VP = verb phrase
+#    PP = prepositional phrase
+#    Det = determiner (sometimes called "article")
+#    Prep = preposition
+#    Adj = adjective
+
+1	S	NP VP
+1   S   NP IP
+1   S   Pro VPC
+1   S   NPS VPS
+
+1   CLAUSE Cls S
+
+1   REL Cls SREL    # for relative clause with object-trace
+1   REL Cls VP      # for relative clause with subject-trace
+
+1   SREL    NP Trans
+1   SREL    NP VPREL
+
+1   VPREL   Comp REL
+
+1   IP  Aux Adj
+1   IP  Aux NP
+1   IP  Aux PROGVP
+1   IP  Aux PP
+
+1   PROGVP  Prog NP
+
+1	VP	Trans NP
+1   VP  Comp CLAUSE
+1   VP  VP PP
+1   VP  VP VPCJ
+
+1   VPC   CVerb OBJ
+
+1   Trans   Trans TRCJ
+
+1	NP	Det Noun
+0.4	NP	NP PP
+0.4 NP  NP NPCJ
+0.7 NP  NP REL
+
+1   NPS Det Nouns
+1   NPS NP NPCJ
+
+1   VPS TransS NP
+
+1	PP	Prep NP
+
+2	Noun	Adj Noun
+1   Noun    Noun GP
+
+1   GP  Gen Noun
+
+1   Adj Quant Adj
+
+# CNF binarized symbols
+
+1   NPCJ    Conj NP
+1   VPCJ    Conj VP
+1   TRCJ    Conj Trans
+1   OBJ NP CLAUSE
+
+# Vocabulary.  Your program can see that "ate" is a terminal
+# symbol because there exists no rule for rewriting it.
+# Any symbol that can rewrite as a terminal (or a string of 
+# terminals, like "chief of staff") is called a "preterminal."  Notice 
+# that a preterminal is a special kind of nonterminal.
+
+1   VP  sighed
+1   NP  Sally
+
+1	Trans	ate
+1	Trans	wanted
+1	Trans	kissed
+1	Trans	understood
+1	Trans	pickled
+1   Trans   chooses
+
+1   Pro it
+
+1   CVerb   perplexed
+
+1   Comp    thought
+1   Comp    understood
+
+1   Prog    eating
+
+1	Det	the
+1	Det	a
+1	Det	every
+
+1	Noun	president
+1	Noun	sandwich
+1	Noun	pickle
+1	Noun	chief
+1   Noun    staff
+1	Noun	floor
+1   Noun    proposal
+1   Noun    desk
+
+1   Nouns   citizens
+
+1   TransS  choose
+
+1	Adj	fine
+1	Adj	delicious
+1	Adj	perplexed
+1	Adj	pickled
+1   Adj lazy
+
+1   Quant   very
+
+1	Prep	with
+1	Prep	on
+1	Prep	under
+1	Prep	in
+
+1   Gen    of
+
+1   Conj    and
+1   Conj    or
+
+1   Aux is
+
+1   Cls that
+
+1   Mark    .
+1   Mark    !

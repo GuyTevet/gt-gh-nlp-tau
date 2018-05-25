@@ -99,3 +99,13 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+#ignor data
+assignment1/CS224n/utils/*
+assignment1/ex/saved_params*
+assignment2/data/*
+assignment2/saved_params*
+assignment3/data/*
+assignment4/data/*
+assignment4/results/*
+
